@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.9/jquery.fullPage.css">
+    <link rel="stylesheet" href="assets/css/onepage-scroll.css">-->
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.timelineMe.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/resume.css">
+</head>
+
+<body>
+    <div id="loadingDiv">
+        <img id="loadinImage" src="assets/img/loading.gif" />
+    </div>
+    <div id="mainContent">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a id="headText" class="navbar-brand navbar-link title" href="#">Designer . Developer</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="fullpage">
+            <section id="page1" class="section">
+                <div class="container">
+                    <div class="col-xs-12">
+                        <div id="headingContent" class="col-md-4">
+                            <div id="profileContainer">
+                                <img class="img-responsive center-block" src="assets/img/header.png" width="180" height="180">
+                            </div>
+                            <div id="contactInfo">
+
+                                <div class="text-center">
+                                    <span class="text-success">Full Stack Developer</span>
+                                </div>
+
+                                <div class="text-center">
+                                    <span id="totalExp" class="text-dark-gray"></span>
+                                </div>
+
+                                <div class="text-center">
+                                    <span class="text-primary"><a href="mailto:saurabhdutta.jk@gmail.com?Subject=Hey%20Saurabh"><i class="icon icon-envelope-o fa fa-lg"></i></a> saurabhdutta.jk@gmail.com</span>
+                                </div>
+
+                                <div id="contactRow2" class="text-center">
+                                    <a class="contactItem" href="https://github.com/saurabh73"><i class="icon icon-github fa fa-lg"></i></a>
+                                    <a class="contactItem" href="https://www.linkedin.com/in/saurabh-dutta-202b7385"><i class="icon icon-linkedin fa fa-lg"></i></a>
+                                    <a class="contactItem" href="https://www.freecodecamp.com/saurabh73"><i class="icon icon-fcc-base fa fa-2x"></i></a>
+                                    <a class="contactItem" href="http://codepen.io/saurabh73/"><i class="icon icon-codepen fa fa-lg"></i></a>
+                                    <a class="contactItem" href="https://angel.co/saurabh-dutta-1"><i class="icon icon-angellist fa fa-lg"></i></a>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12">
+                                <a class="btn btn-primary btn-block btn-sm" type="button">Download Visual CV</a>
+                                <a class="btn btn-success btn-block btn-sm" type="button">Download CV</a>
+                            </div>
+                        </div>
+                        <div id="headingAbout" class="col-md-8 pull-right">
+                            <div class="text-left text-primary row"><span id="name">Saurabh Dutta</span></div>
+                            <h4 class="row text-success">About Me</h4>
+                            <p class="lead text-left text-dark-gray row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt varius molestie. Mauris sed neque aliquam purus ullamcorper dictum. Quisque tempus molestie magna sed molestie. Etiam pretium, odio sit amet ullamcorper finibus, massa nulla feugiat dolor, ut pulvinar velit eros fermentum metus. Integer sit amet libero tempor, ultrices tellus hendrerit, semper felis. Vestibulum at nulla finibus, consequat urna id, rutrum urna. </p>
+
+                            <div class="row">
+                                <h4 class="text-success">Hobbies</h4>
+
+                                <div class="col-xs-3 col-md-3 text-center">
+                                    <img class="img-responsive hobbyImage" src="assets/img/games-o.svg" />
+                                </div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img class="img-responsive hobbyImage" src="assets/img/graphics-o.svg" />
+                                </div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img class="img-responsive hobbyImage" src="assets/img/movies-o.svg" />
+                                </div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img class="img-responsive hobbyImage" src="assets/img/singing-o.svg" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page5" class="section">
+                <div class="container">
+                    <div class="">
+                        <h2 class="text-light text-left text-bold">Academic &amp; Professional Timeline</h2>
+                        <div id="timeline-container-basic" type="text"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="page2" class="section">
+                <div class="container">
+                    <div class="">
+                        <h2 class="text-light text-left text-bold">Technology Proficiency</h2>
+                        <!--<img class="img-responsive text-center" src="assets/img/tech.png">-->
+                        <div id="techProficiencyGraph" class="ct-chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="page3" class="section">
+                <div class="container">
+                    <div class="">
+                        <h2 class="text-dark text-left text-bold">Frameworks, Platforms &amp; Tools</h2>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework1" class="ct-chart "></div>
+                                <h4 class="text-center">Spring</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework2" class="ct-chart "></div>
+                                <h4 class="text-center">Hibernate</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework3" class="ct-chart"></div>
+                                <h4 class="text-center">Mongo DB</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework4" class="ct-chart"></div>
+                                <h4 class="text-center">Bootstrap</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework5" class="ct-chart"></div>
+                                <h4 class="text-center">Angular JS 1.x</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework6" class="ct-chart "></div>
+                                <h4 class="text-center">React JS</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework7" class="ct-chart"></div>
+                                <h4 class="text-center">Firebase</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div id="framework8" class="ct-chart"></div>
+                                <h4 class="text-center">Bluemix</h4>
+                            </div>
+                        </div>
+
+
+                        <!--<img class="img-responsive col-md-10 center-block" src="assets/img/framework.png">-->
+                    </div>
+                </div>
+            </section>
+            <section id="page4" class="section">
+                <div class="container">
+                    <h2 class="text-light text-left text-bold">Portfolio Projects</h2>
+
+                    <div class="grid">
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa iit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, consectetur adipisicilor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, iliqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum diqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item col-md-4 col-s-6 col-xs-12">
+                            <div class="thumbnail">
+                                <img class="img-responsive img-thumbnail project-heading-image" src="http://placehold.it/350x250" class="">
+                                <div class="caption">
+                                    <h4 class="">Application</h4>
+
+                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similiqueLorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p> <a href="#" class="btn btn-primary btn-xs pull-right" role="button">Hello</i></a> <a href="#" class="btn btn-default btn-xs" role="button">More Info</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <footer class="">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <div class="container-fluid">
+                        <div class="">
+                            <span id="copyRightText" class="text-light">Copyright &copy; Saurabh Dutta <script>document.write(new Date().getFullYear())</script></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="assets/js/chartist-plugin-fill-donut.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.timelineMe.js"></script>
+    <script src="assets/js/jquery.typer.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
