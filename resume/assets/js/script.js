@@ -280,7 +280,7 @@ function createTimeLine() {
                     '<h5 class="text-bold text-primary">High School</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/kv.png" width="75" /></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Kendriya Vidhyalaya No. 3 , Bhopal</span>' +
                     '<br/>' +
                     '<span class="text-dark-gray">Central Board of Secondary Eductation</span>' +
@@ -297,7 +297,7 @@ function createTimeLine() {
                     '<h5 class="text-bold text-primary">Intermediate</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/kv.png" width="75"/></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Kendriya Vidhyalaya No. 3 , Bhopal</span>' +
                     '<br/>' +
                     '<span class="text-dark-gray">Central Board of Secondary Eductation</span>' +
@@ -312,7 +312,7 @@ function createTimeLine() {
                     '<h5 class="text-primary text-bold">Internship</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/wipro_logo.png" width="70" /></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Wipro Technologies</span>' +
                     '<br/>' +
                     '<span class="text-success">Duration : 2 Months (May 2013-July 2013)</span>' +
@@ -327,7 +327,7 @@ function createTimeLine() {
                     '<h5 class="text-primary text-bold">B.Tech Computer Science &amp; Engineering</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/jk.png" width="70" /></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">J.K. Institute of Applied Physics &amp; Technology</span>' +
                     '<br/>' +
                     '<span class="text-dark-gray">Department of Electronics &amp; Communication</span>' +
@@ -344,7 +344,7 @@ function createTimeLine() {
                     '<h5 class="text-primary text-bold">Infogain India Pvt. Ltd.</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/infogain_logo.png" width="70" /></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Software Engineer</span>' +
                     '<br/>' +
                     '<span class="text-success">Exp : 1 year 2 months (Oct 2014-Dec 2015)</span>' +
@@ -359,7 +359,7 @@ function createTimeLine() {
                     '<h5 class="text-primary text-bold">Wipro Digital</h5>' +
                     '<div class="row">' +
                     '<div class="col-md-2"><img src="assets/img/wd_logo.png" width="70" /></div>' +
-                    '<div class="col-md-10">' +
+                    '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Technologist</span>' +
                     '<br/>' +
                     '<span class="text-success">Exp : ' + computeExp(04, 01, 2016) + ' (Jan 2016-Till Date)</span>' +
