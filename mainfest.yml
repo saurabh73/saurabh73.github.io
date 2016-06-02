@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: resume73
+  host: resume73
+  disk_quota: 2048M
+  services:
+  - Cloudant NoSQL DB-y3
