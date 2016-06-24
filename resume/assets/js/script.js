@@ -2,7 +2,7 @@ $("document").ready(function () {
 
     $("#loadingDiv").hide();
     $("#mainContent").show();
-
+    
     $("#totalExp").text('Experience :' + computeExp(07, 10, 2014));
 
     renderFrameworkCharts();
@@ -122,9 +122,9 @@ $("document").ready(function () {
         createPieChart('framework3', 55, 'assets/img/mongodb.png', '529848');
         createPieChart('framework4', 80, 'assets/img/bootstrap.png', '18093A');
         createPieChart('framework5', 40, 'assets/img/angularjs.png', 'B82934');
-        createPieChart('framework6', 60, 'assets/img/reactjs.png', '00D8FF');
-        createPieChart('framework7', 60, 'assets/img/firebase.png', 'FED95A');
-        createPieChart('framework8', 40, 'assets/img/bluemix.png', '00AED1');
+        createPieChart('framework6', 40, 'assets/img/reactjs.png', '00D8FF');
+        createPieChart('framework7', 30, 'assets/img/firebase.png', 'FED95A');
+        createPieChart('framework8', 70, 'assets/img/bluemix.png', '00AED1');
     }
 
 
@@ -263,8 +263,14 @@ function refreshTimeLine(timeLineVar) {
 
 }
 
+
 function createTimeLine() {
     var currentDate = new Date();
+    var intershipExp = "Learned about Payments Methods and SWIFT Standards (MT101 and Pain.001.001.05) and developed a parser for the same. This Internship helped me to gain knowledge about Software Development Cycle and XML technologies and enhanced my Java skills.";
+
+    var infogainExp = "Worked as Software Engineer, and got hands on experience on various technologies credits to extensive Instructor led training program of Infogain. Worked for NCR Corporation for my project engagement on their product called VISION, which is used to monitor &amp; administer ATM machines for their various Banking clients. Project included development of RESTful api's, defect fixing for VISION SaaS platform and development on latest version of their product.";
+
+    var wiproDigitalExp = "Working as a Technlogist in an innovation-led, digital transformation partner built for today’s digital challenges. My current project is for Capital One, which includes working on their RTM framework to build RESTful API's. Some of the API I worked on are Statemement Reprint, Statement Details & Partnership Authorization. Technologies/framework used are Java, Spring framework and JUnit for unit testing.";
     return $('#timeline-container-basic').timelineMe({
 
         items: [
@@ -317,7 +323,7 @@ function createTimeLine() {
                     '<br/>' +
                     '<span class="text-success">Duration : 2 Months (May 2013-July 2013)</span>' +
                     '<br/>' +
-                    '<p class="text-dark-gray">Learned about Payments Methods and SWIFT Standards (MT101 and Pain.001.001.05) and developed a parser for the same. This Internship helped me to gain knowledge about Software Development Cycle and XML technologies and enhanced my Java skills.</p>' +
+                    '<p class="text-dark-gray">'+intershipExp+'</p>' +
                     '</div>' +
                     '</div>'
             }, {
@@ -349,7 +355,7 @@ function createTimeLine() {
                     '<br/>' +
                     '<span class="text-success">Exp : 1 year 2 months (Oct 2014-Dec 2015)</span>' +
                     '<br/>' +
-                    '<p class="text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a euismod ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam neque nunc, varius eget felis vel, viverra congue orci. Maecenas ultricies, quam non euismod egestas, mi nisl lobortis turpis, ut ultricies urna felis ut mauris. Sed efficitur diam quis porttitor pellentesque. </p>' +
+                    '<p class="text-dark-gray">'+infogainExp+'</p>' +
                     '</div>' +
                     '</div>'
             }, {
@@ -362,9 +368,9 @@ function createTimeLine() {
                     '<div class="col-md-10 col-xs-11">' +
                     '<span class="text-primary">Technologist</span>' +
                     '<br/>' +
-                    '<span class="text-success">Exp : ' + computeExp(04, 01, 2016) + ' (Jan 2016-Till Date)</span>' +
+                    '<span class="text-success">Exp : ' + computeExp(08, 12, 2015) + ' (Jan 2016-Till Date)</span>' +
                     '<br/>' +
-                    '<p class="text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a euismod ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam neque nunc, varius eget felis vel, viverra congue orci. Maecenas ultricies, quam non euismod egestas, mi nisl lobortis turpis, ut ultricies urna felis ut mauris. Sed efficitur diam quis porttitor pellentesque. </p>' +
+                    '<p class="text-dark-gray">'+wiproDigitalExp+'</p>' +
                     '</div>' +
                     '</div>'
             }]
@@ -377,8 +383,6 @@ function computeExp(date, month, year) {
 
     var totalMonths = monthDiff(startDate, today);
 
-    console.log(totalMonths);
-
     var years = Math.floor(totalMonths / 12);
     var months = totalMonths % 12;
 
@@ -386,12 +390,13 @@ function computeExp(date, month, year) {
 
 }
 
-function monthDiff(d1, d2) {
-    var months;
-    months = (d2.getFullYear() - d1.getFullYear()) * 12;
-    months -= d1.getMonth() + 1;
-    months += d2.getMonth();
-    return months <= 0 ? 0 : months;
+function monthDiff(from,to) {
+    var months = to.getMonth() - from.getMonth() + (12 * (to.getFullYear() - from.getFullYear()));
+
+    if(to.getDate() < from.getDate()){
+        months--;
+    }
+    return months;
 }
 
 function createPieChart(id, percentage, imageUrl, strokeColor) {

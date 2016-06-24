@@ -80,6 +80,8 @@ footer > .navbar {
 
 #page4 {
     background-color: #009688;
+    /* temp */
+    display:none;
 }
 
 #page5 {
@@ -327,4 +329,8 @@ img.project-heading-image {
 
 #copyRightText {
     margin-top: 10px;
+}
+#vsv {
+     /* temp */
+    display:none;
 }
