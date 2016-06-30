@@ -1,0 +1,79 @@
+<div class="container">
+    <!-- Portfolio Item Row -->
+
+    <div class="row">
+        <div class="col-md-8">
+            <div id="videoPlayer">
+                <video class="" controls style="width:100%;">
+                    <source src="http://res.cloudinary.com/dren4jgbp/video/upload/v1467141646/bunny_pvfnk9.mp4" type="video/mp4"> Your browser does not support the video tag.
+                </video>
+            </div>
+            <br/>
+            <p class="lead text-primary">{{nowPlaying}}</p>
+        </div>
+
+        <div class="col-md-4" ng-model="files">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <strong>Upload new video</strong></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="email">Video Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Title" ng-model="title" ng-change="updateTitle()">
+                    </div>
+                    <div class="input-group image-preview">
+
+                        <input id="fileNamePreview" placeholder="" type="text" class="form-control image-preview-filename" disabled="disabled">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn"> 
+                        <!-- image-preview-input -->
+                        <div class="btn btn-primary image-preview-input"> 
+                            <span class="glyphicon glyphicon-folder-open"></span><span class="image-preview-input-title"> Browse</span>
+                        <input type="file" name="file" class="cloudinary_fileupload" ng-model="$parent.files" />
+                    </div>
+                    </span>
+                </div>
+                <!-- /input-group image-preview [TO HERE]-->
+
+                <br />
+
+                <!-- Progress Bar -->
+                <div class="file" ng-repeat="file in files">
+                    <div class="progress">
+                        <div id="fileUploadProgress" class="progress-bar" role="progressbar" aria-valuenow="{{file.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{file.progress}}%" ng-init="progress=0">{{file.status}}</div>
+                    </div>
+                </div>
+                <br />
+                <!-- Upload Finished -->
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /.row -->
+<br/>
+<br/>
+
+<!-- Related Projects Row -->
+<div class="row">
+
+    <div ng-if="photos.length !== 0 || photos" class="page-header">
+        <h3>Uploaded videos</h3>
+    </div>
+    <div class="photos">
+        <p ng-if="photos.length === 0 || !photos">No videos were uploaded yet.</p>
+        <div class="photo" ng-repeat="photo in photos | orderBy:'version':true">
+            <div class="col-sm-4 col-md-3 col-xs-6">
+                <div class="uploadedVideos" ng-click="playVideo(photo.public_id,photo.context.custom.video)">
+                    <div class="thumbnail videothumb">
+                        <cl-image public-id="{{photo.public_id}}" resource-type="video" class="img-responsive" crop="fit" quality="80" format="jpg" />
+                        <div class="caption">
+                            <span class="lead text-primary">{{photo.context.custom.video}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
