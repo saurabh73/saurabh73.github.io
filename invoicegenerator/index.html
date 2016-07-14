@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header"><a href="#" class="navbar-brand text-info navbar-link">Invoice Generator</a>
+                <button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggle collapsed"></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <div class="container" ng-init="invoice">
+        <div class="col-sm-6 col-xs-12">
+            <h3 class="text-primary">Invoice Items</h3>
+            <div class="row" add-item>
+                <div class="row">
+                    <button id="addItemButton" class="btn btn-primary pull-right" type="button">{{getButtonText()}}</button>
+                </div>
+            </div>
+            <div class="row"> </div>
+            <h3 class="text-primary">Header Text</h3>
+            <textarea rows="3" class="input-lg form-control" ng-model="invoice.header"></textarea>
+            <h3 class="text-primary">Footer Text</h3>
+            <textarea rows="3" class="input-lg form-control" ng-model="invoice.footer"></textarea>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+             <h3 class="text-primary">Generated Invoice</h3>
+            <div class="row">
+                <button class="btn btn-primary pull-right" id="saveInvoice" ng-click="saveInvoice()" ng-show="invoice.items.length > 0">Save Invoice</button>
+            </div>
+            <div id="receiptWrapper" class="receiptWrapper">
+                <div class="receipt zig-zag zig-zag-top zig-zag-bottom">
+                    <div class="text-center">Invoice #{{invoice.inv_num}}</div>
+                    <div class="row" id="dateTimeRow">
+                        <div class="col-md-12"> <span>Date :{{invoice.inv_date | date :  "mediumDate"}}</span> <span class="pull-right">Time :{{invoice.inv_date | date: "shortTime"}}</span> </div>
+                    </div>
+                    <div class="receiptHeader dashed-border-bottom">
+                        <p>{{invoice.header}}</p> <span><b>Sales Invoice</b></span> </div>
+                    <div class="receiptBody">
+                        <div class="receiptItem">
+                            <table class="receiptTable table" ng-show="invoice.items.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="(fIndex, item) in invoice.items">
+                                        <td>{{fIndex + 1}}</td>
+                                        <td>{{item.itemName}}</td>
+                                        <td> {{item.itemPrice | currency:"&#8377;"}}</td>
+                                        <td>{{item.itemQuantity}}</td>
+                                        <td>{{(item.itemQuantity * item.itemPrice) | currency:"&#8377;"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="totalDiv" class="dashed-border-top" ng-show="invoice.items.length > 0">
+                                <div class="row">
+                                    <div id="itemTotal"> <span class="pull-right"><b>Item Total : </b>{{getItemTotal() | currency:"&#8377;"}}</span></div>
+                                </div>
+                                <div class="row">
+                                    <div id="servTax"> <span class="pull-right"><b>Service Tax : </b>{{(invoice.itemTotal * 0.135) | currency:"&#8377;"}}</span></div>
+                                </div>
+                                <div class="row">
+                                    <div id="totalBill"> <span class="pull-right"><b>Total Amount : </b>{{(invoice.itemTotal * 1.135) | currency:"&#8377;"}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="receiptFooter dashed-border-top"> <span><b>Thank You !!!</b></span>
+                        <p>{{invoice.footer}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+
+
+</html>

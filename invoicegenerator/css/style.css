@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300);
+body {
+    padding-top: 80px;
+}
+
+#item-row {
+    margin-bottom: 5px;
+}
+
+div#itemTotal,
+div#servTax,
+div#totalBill {
+    margin-right: 80px;
+}
+
+div#dateTimeRow {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.dashed-border-top {
+    border-top: 1px dashed #a5a5a5;
+}
+
+.dashed-border-bottom {
+    border-bottom: 1px dashed #a5a5a5;
+}
+
+.table>thead>tr>th {
+    border-bottom: 1px dashed #a5a5a5;
+}
+
+.receiptWrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    font-family: 'Roboto Mono';
+    color: #3d3d3d;
+}
+
+.receipt {
+    padding: 10px;
+    text-transform: Uppercase;
+    position: relative;
+    top: 20px;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+}
+
+.receipt .receiptHeader,
+.receipt .receiptItem,
+.receipt .receiptFooter {
+    text-align: center;
+}
+
+.receiptFooter {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.receiptHeader {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.receipt .receiptTable {
+    margin: 0 auto;
+}
+
+.receipt .receiptTable>thead>tr>th,
+.receipt .receiptTable>tbody>tr>td {
+    text-align: left;
+}
+
+.receipt .receiptTable>thead>tr>th:nth-child(2),
+.receipt .receiptTable>tbody>tr>td:nth-child(2) {
+    text-align: left;
+}
+
+.zig-zag {
+    background: #FFF;
+    position: relative;
+}
+
+.zig-zag-top:before,
+.zig-zag-bottom:after {
+    background-repeat: repeat-x;
+    content: " ";
+    display: block;
+    height: 32px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+}
+
+.zig-zag-top:before {
+    background: linear-gradient(-45deg, #FFF 16px, red 16px, blue 16px, transparent 0), linear-gradient(45deg, #FFF 16px, transparent 0);
+    background-size: 22px 32px;
+    background-position: left top;
+    top: -30px;
+}
+
+.zig-zag-bottom:after {
+    background: linear-gradient(-135deg, #FFF 16px, red 16px, blue 16px, transparent 0), linear-gradient(135deg, #FFF 16px, transparent 0);
+    background-position: left bottom;
+    background-size: 22px 32px;
+}
+
+#addItemButton {
+    margin: 10px;
+}
+#saveInvoice {
+    margin:10px;
+}
